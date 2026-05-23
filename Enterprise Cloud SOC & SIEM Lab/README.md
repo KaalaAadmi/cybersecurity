@@ -15,10 +15,11 @@ My primary objective was to accelerate my transition into cybersecurity by bridg
 - **Enterprise OPSEC:** I gained hands-on experience implementing a Bastion Host (Jump-Box) architecture, utilizing SSH Agent Forwarding and local port tunneling to access internal analytics dashboards without exposing them to the public internet.
 
 ### 🎥 The Highlight Reel
+*If you are short on time, I highly recommend watching this 4-minute video breakdown of the architecture and the final security analysis.*
 
-_If you are short on time, I highly recommend watching this 4-minute video breakdown of the architecture and the final security analysis._
+[![Enterprise Cloud SOC & SIEM Lab Walkthrough](https://img.youtube.com/vi/5QcNKFZU6Jk/maxresdefault.jpg)](https://youtu.be/5QcNKFZU6Jk)
 
-> **[Insert Unlisted YouTube Link Here]**_Note: Attacker Source IPs and specific environment identifiers have been redacted from the video for operational security._
+> *Note: Attacker Source IPs and specific environment identifiers have been redacted from the video for operational security.*
 
 ## 🏗️ The Architecture: Building the Vault
 
@@ -28,7 +29,8 @@ To mirror strict enterprise compliance, I couldn't just throw virtual machines o
 - **The Bastion Host:** The Elastic SIEM is completely isolated from the public internet. Accessing the Kibana analytics dashboard requires an authorized analyst to establish a secure, encrypted SSH tunnel (`L 5601`) from their local terminal, routing directly through a dedicated Jump-Box.
 - **Containerization:** Both the vulnerable web app (DVWA) and the Elastic Stack were containerized using Docker for absolute environmental isolation and rapid deployment.
 
-> _**(Insert the [Draw.io](http://Draw.io) Architecture Diagram here)**_
+![SOC Arch](https://github.com/KaalaAadmi/cybersecurity/blob/main/images/SOC-Architecture.png "Image 1: SOC Arch")
+> Image 1: SOC Arch
 
 ## ⚙️ Data Engineering: When Default Tools Fail
 
@@ -58,7 +60,8 @@ Because attackers rarely send clear-text payloads, a standard string search usua
 
 I queried the Discover tab directly for `"1'='1"` and immediately surfaced the raw telemetry.
 
-> _**(Insert Screenshot of the expanded Kibana log here, highlighting the message field)**_
+![Kibana SS](https://github.com/KaalaAadmi/cybersecurity/blob/main/images/Kibana-SOC-ss.png "Image 2: Kibana SS")
+> Image 2: Kibana Screenshot
 
 ### Analyzing the Raw Artifacts
 
