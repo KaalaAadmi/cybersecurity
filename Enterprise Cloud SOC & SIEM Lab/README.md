@@ -70,3 +70,6 @@ By investigating the raw `message` string, I could extract the exact indicators 
 - **The Payload:** The URL-decoder successfully revealed the clear-text `id=%' or '1'='1` injection in the URI.
 - **The Attacker IP:** The source IP (`[REDACTED]`) is clearly identifiable at the very beginning of the string.
 - **The Status Code:** The `200` following the HTTP/1.1 declaration is the smoking gun. It confirms to the analyst that the web server did not block the request; it processed the malicious payload successfully.
+
+### 📖 Deployment Runbook
+For a detailed, step-by-step guide on how this environment was provisioned, configured, and attacked, please refer to the [Deployment-Runbook.md](https://github.com/KaalaAadmi/cybersecurity/blob/main/Enterprise%20Cloud%20SOC%20%26%20SIEM%20Lab/Deployment-Runbook.md) included in this repository.
